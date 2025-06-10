@@ -25,10 +25,10 @@ uplloaded_files = st.file_uploader("upload your files (accepts CSV or Excel):", 
 if uplloaded_files:
     for file in uplloaded_files:
         file_ext = os.path.splitext(file.name)[-1].lower()
-         if  file_ext == "csv":
-             df = pd.read_csv(file) 
+         if  file_ext == ".csv":
+            df = pd.read_csv(file) 
          elif file_ext == "xlsx":
-             df = pd.read_excel(file)  
+            df = pd.read_excel(file)  
          else:
         st.error(f"unsupported file type:{file_ext}") 
         continue    

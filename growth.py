@@ -21,16 +21,16 @@ st.markdown(
 st.title("✪ Datasweeper Sterling Integrator by Benish Saleem")
 st.write("Transform your files between CSV and Excel formates with built-in data cleaning and visualization creating the project for quarter 3! ")
 #file uploader
-uplloaded_files = st.file_uploader("upload your files (accepts CSV or Excel):", type=["csv", "xlsx"], accept_multiple_files=(True))
-if uplloaded_files:
-    for file in uplloaded_files:
+uploaded_files = st.file_uploader("upload your files (accepts CSV or Excel):", type=["csv", "xlsx"], accept_multiple_files=(True))
+if uploaded_files:
+    for file in uploaded_files:
         file_ext = os.path.splitext(file.name)[-1].lower()
          if file_ext == ".csv":
             df = pd.read_csv(file) 
          elif file_ext == "xlsx":
             df = pd.read_excel(file)  
          else:
-        st.error(f"unsupported file type:{file_ext}") 
+            st.error(f"unsupported file type:{file_ext}") 
         continue    
 
          #file details
